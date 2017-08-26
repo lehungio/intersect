@@ -7,14 +7,15 @@
     "type": "git",
     "url": "https://github.com/noonat/intersect.git"
   },
-  "devDependencies": {
-    "coffee-script": "^1.12.7",
-    "docco": "^0.7.0",
-    "nodeunit": "^0.11.1"
-  },
   "scripts": {
-    "prepublish": "cake build",
-    "test": "nodeunit test"
+    "prepublish": "litpro -b . intersect.md",
+    "test": "babel-node ./node_modules/.bin/nodeunit test"
   },
-  "main": "lib/intersect.js"
+  "main": "lib/intersect.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "litpro": "^2.0.0",
+    "nodeunit": "^0.11.1"
+  }
 }
